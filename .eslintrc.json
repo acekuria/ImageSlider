@@ -14,7 +14,7 @@
       "no-unused-vars": "warn",
       "prettier/prettier": "warn",
       "object-shorthand":"off",
-      "class-methods-use-this": "off"
-      
+      "class-methods-use-this": "off",
+      "no-param-reassign": "off"
   }
 }
