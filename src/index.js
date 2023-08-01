@@ -1,23 +1,21 @@
 const buttons = document.querySelectorAll('[data-slider-button]');
-
 const navigationDots = document.querySelector('.navigation-dots');
 
 function updateNavigationDots() {
   const slides = document.querySelectorAll('[data-slides] .slide');
   navigationDots.innerHTML = '';
 
-  slides.forEach((slide, index) => {
+  slides.forEach((slide) => {
     const dot = document.createElement('span');
-    dot.classList.add('dot');
+    dot.classList.add('dots');
     if (slide.dataset.active) {
       dot.classList.add('active');
     }
 
     dot.addEventListener('click', () => {
       const activeSlide = document.querySelector('[data-slides] [data-active]');
-      if (activeSlide) {
-        activeSlide.dataset.active = false;
-      }
+
+      delete activeSlide.dataset.active;
       slide.dataset.active = true;
       updateNavigationDots();
     });
@@ -26,7 +24,7 @@ function updateNavigationDots() {
   });
 }
 
-window.addEventListener('load', updateNavigationDots());
+window.addEventListener('load', updateNavigationDots);
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {

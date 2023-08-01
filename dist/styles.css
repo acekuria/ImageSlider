@@ -107,8 +107,8 @@ ul {
 }
 
 
-.dot.active {
-  background-color: blue;
+.dots.active {
+  background-color: antiquewhite;
 }
 
 @media screen and (min-width: 1215px) {
