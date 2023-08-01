@@ -25,15 +25,12 @@ function updateNavigationDots() {
   });
 }
 
+
 function startSlideInterval() {
   slideInterval = setInterval(() => {
     const nextButton = document.querySelector('[data-slider-button="next"]');
     nextButton.click();
   }, 5000);
-}
-
-function stopSlideInterval() {
-  clearInterval(slideInterval);
 }
 
 window.addEventListener('load', () => {
