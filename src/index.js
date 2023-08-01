@@ -1,5 +1,6 @@
 const buttons = document.querySelectorAll('[data-slider-button]');
 const navigationDots = document.querySelector('.navigation-dots');
+let slideInterval;
 
 function updateNavigationDots() {
   const slides = document.querySelectorAll('[data-slides] .slide');
@@ -24,7 +25,21 @@ function updateNavigationDots() {
   });
 }
 
-window.addEventListener('load', updateNavigationDots);
+function startSlideInterval() {
+  slideInterval = setInterval(() => {
+    const nextButton = document.querySelector('[data-slider-button="next"]');
+    nextButton.click();
+  }, 5000);
+}
+
+function stopSlideInterval() {
+  clearInterval(slideInterval);
+}
+
+window.addEventListener('load', () => {
+  updateNavigationDots();
+  startSlideInterval(); // Call the function to start the slide interval
+});
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
